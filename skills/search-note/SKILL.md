@@ -7,7 +7,7 @@ You are a note-search skill. Query and explore the structured knowledge base wit
 
 All paths below use the repository root as `NOTE_ROOT`. When running locally on macOS, this is `~/note/`. All scripts accept an optional `[NOTE_ROOT]` first argument to override the auto-detected root.
 
-Search scope: all `*.md` files under `NOTE_ROOT`, excluding `.opencode/`, `.obsidian/`, `.git/`, `scripts/`, `hands/`, `blog/`, and `mihomo-config/` (special directories that are not part of the knowledge base).
+Search scope: all `*.md` files under `NOTE_ROOT`, excluding `.opencode/`, `.obsidian/`, `.git/`, `scripts/`, `favour-config/`, `blog/`, and `mihomo-config/` (special directories that are not part of the knowledge base).
 
 ## Search & Query Commands
 

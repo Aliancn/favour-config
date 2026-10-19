@@ -22,7 +22,7 @@ A journal is a chronological log plus an inbox. It does not replace formal notes
 - **Filename IS the ISO date**: `YYYY-MM-DD.md`, e.g. `2026-09-22.md`
 - **Month subdirectory**: `YYYY-MM`, e.g. `日记/2026-09/`
 - `日记/index.md` groups entries under `## YYYY-MM` month headings
-- `日记/template-daily.md` is the in-vault copy of `hands/skill/daily-note/template.md`, used by Obsidian's Daily Notes plugin
+- `日记/template-daily.md` is the in-vault copy of `favour-config/skills/daily-note/template.md`, used by Obsidian's Daily Notes plugin
 
 ## 写作流程
 
@@ -38,7 +38,7 @@ A journal is a chronological log plus an inbox. It does not replace formal notes
 mkdir -p 日记/YYYY-MM
 ```
 
-- If `日记/YYYY-MM/YYYY-MM-DD.md` is missing, create it from `hands/skill/daily-note/template.md`, replacing the `{{date}}` placeholder with the actual date
+- If `日记/YYYY-MM/YYYY-MM-DD.md` is missing, create it from `favour-config/skills/daily-note/template.md`, replacing the `{{date}}` placeholder with the actual date
 - If it exists, **READ it before editing**
 
 ### Step 3: 归类追加

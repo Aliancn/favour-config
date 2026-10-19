@@ -87,7 +87,7 @@ All paths below use the repository root as `NOTE_ROOT`. When running locally on 
 
 以下根目录下的目录不纳入笔记分类系统，写入笔记时不要使用：
 
-- `hands/` — skill 同步管理（link.sh, registry.csv, SKILL.md 源文件）
+- `favour-config/` — skill 同步管理（link.sh, registry.csv, SKILL.md 源文件）
 - `scripts/` — 搜索/维护脚本
 - `blog/` — Astro 博客项目源码（完整前端项目，非笔记）
 - `mihomo-config/` — mihomo 配置文件集合（YAML/conf，非笔记）

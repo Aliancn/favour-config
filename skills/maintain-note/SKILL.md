@@ -7,7 +7,7 @@ You are a note-maintenance skill. Keep the knowledge base healthy by fixing orph
 
 All paths below use the repository root as `NOTE_ROOT`. When running locally on macOS, this is `~/note/`. All scripts accept an optional `[NOTE_ROOT]` first argument to override the auto-detected root.
 
-Maintenance scope: all `*.md` files under `NOTE_ROOT`, excluding `.opencode/`, `.obsidian/`, `.git/`, `scripts/`, `hands/`, `blog/`, and `mihomo-config/` (special directories that are not part of the knowledge base).
+Maintenance scope: all `*.md` files under `NOTE_ROOT`, excluding `.opencode/`, `.obsidian/`, `.git/`, `scripts/`, `favour-config/`, `blog/`, and `mihomo-config/` (special directories that are not part of the knowledge base).
 
 ## Directory Structure Reference
 
@@ -24,7 +24,7 @@ All maintenance operations must respect the knowledge base directory conventions
 
 日记类为时间线性质：按天追加、不去重、不参与陈旧度标记；日期命名文件（`YYYY-MM-DD`）已在排重检测中排除，不会互相误报为重复。
 
-以下根目录为特殊目录，不纳入维护范围：`hands/`（skill 管理）、`scripts/`（脚本）、`blog/`（博客源码）、`mihomo-config/`（配置文件集合）。
+以下根目录为特殊目录，不纳入维护范围：`favour-config/`（skill 管理）、`scripts/`（脚本）、`blog/`（博客源码）、`mihomo-config/`（配置文件集合）。
 
 ## Rename
 
