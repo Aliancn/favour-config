@@ -150,7 +150,6 @@ Notes:
 | `write-note` | Create and classify notes |
 | `wxmp-article-harvester` | Harvest public WeChat article archives |
 | `wxmp-to-blog` | Convert a WeChat article into an Astro blog post |
-| `xuecheng` | Search an internal document platform (Citadel) |
 
 ## Environment management
 
@@ -191,7 +190,7 @@ chmod 600 ~/.config/favour-config/env
   |---|---|
   | `paper-reader/scripts/mineru_api.py` | CLI argument → process env → env file |
   | `wxmp-article-harvester/scripts/runtime_paths.py` | process env → env file (file only fills unset keys) |
-  | `xuecheng` / `md2citadel` Markdown skills | source the file in the shell, so file values apply to that invocation |
+  | `md2citadel` Markdown skill | source the file in the shell, so file values apply to that invocation |
 
   The Markdown skills load it with:
 
@@ -206,10 +205,9 @@ chmod 600 ~/.config/favour-config/env
 | `MINERU_TOKEN` | `paper-reader` | yes | MinerU Cloud API token |
 | `METASO_API_KEY` | `wxmp-article-harvester` | no | Metaso full-text fallback (paid) |
 | `WXMP_HARVEST_HOME` | `wxmp-article-harvester` | no | Override the export/profile directory |
-| `KM_BASE_URL` | `xuecheng`, `md2citadel` | internal use | Document platform root URL |
+| `KM_BASE_URL` | `md2citadel` | internal use | Document platform root URL |
 | `CITADEL_CONVERT_URL` | `md2citadel` | internal use | High-fidelity Markdown conversion endpoint |
 | `DOC_SSO_URL` | `md2citadel` | internal use | SSO login entry used to obtain the cookie |
-| `OA_SKILLS_NPM_REGISTRY` | `xuecheng` | internal use | npm registry for the `oa-skills` CLI |
 
 ### Adding a variable
 
