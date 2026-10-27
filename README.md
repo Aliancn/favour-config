@@ -138,7 +138,6 @@ Notes:
 | `daily-note` | Daily journal records under `日记/` |
 | `english-mode` | English-learning loop inside the note vault |
 | `maintain-note` | Merge, split, rename, and maintain notes |
-| `md2citadel` | Sync Markdown to an internal document platform (Citadel) |
 | `openreview` | Search and download papers from OpenReview |
 | `overleaf-skill` | Manage Overleaf projects with `olcli` |
 | `paper-reader` | Deep paper reading with MinerU PDF parsing |
@@ -182,21 +181,13 @@ chmod 600 ~/.config/favour-config/env
 - Skills must not contain hardcoded fallbacks for secrets or internal hosts.
   If a value is missing, fail with a message naming the key and the env file.
 - `FAVOUR_CONFIG_ENV` overrides the env-file path in the Python helpers
-  (`paper-reader`, `wxmp-article-harvester`). The Markdown-only skills
-  currently document the default path.
+  (`paper-reader`, `wxmp-article-harvester`).
 - Lookup order is implementation-specific, by design:
 
   | Consumer | Lookup |
   |---|---|
   | `paper-reader/scripts/mineru_api.py` | CLI argument → process env → env file |
   | `wxmp-article-harvester/scripts/runtime_paths.py` | process env → env file (file only fills unset keys) |
-  | `md2citadel` Markdown skill | source the file in the shell, so file values apply to that invocation |
-
-  The Markdown skills load it with:
-
-  ```bash
-  set -a; . ~/.config/favour-config/env; set +a
-  ```
 
 ### Current variables
 
@@ -205,9 +196,6 @@ chmod 600 ~/.config/favour-config/env
 | `MINERU_TOKEN` | `paper-reader` | yes | MinerU Cloud API token |
 | `METASO_API_KEY` | `wxmp-article-harvester` | no | Metaso full-text fallback (paid) |
 | `WXMP_HARVEST_HOME` | `wxmp-article-harvester` | no | Override the export/profile directory |
-| `KM_BASE_URL` | `md2citadel` | internal use | Document platform root URL |
-| `CITADEL_CONVERT_URL` | `md2citadel` | internal use | High-fidelity Markdown conversion endpoint |
-| `DOC_SSO_URL` | `md2citadel` | internal use | SSO login entry used to obtain the cookie |
 
 ### Adding a variable
 
