@@ -137,6 +137,7 @@ Notes:
 |---|---|
 | `daily-note` | Daily journal records under `日记/` |
 | `english-mode` | English-learning loop inside the note vault |
+| `explainloop` | Turn an article into short editable explanatory GIFs (vendored, MIT) |
 | `maintain-note` | Merge, split, rename, and maintain notes |
 | `openreview` | Search and download papers from OpenReview |
 | `overleaf-skill` | Manage Overleaf projects with `olcli` |
