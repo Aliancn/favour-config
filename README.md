@@ -136,8 +136,10 @@ Notes:
 | Skill | Purpose |
 |---|---|
 | `daily-note` | Daily journal records under `日记/` |
+| `doc-diagram` | Diagram layout rules for documents (inline SVG, no drawio) |
 | `english-mode` | English-learning loop inside the note vault |
 | `explainloop` | Turn an article into short editable explanatory GIFs (vendored, MIT) |
+| `find-skill` | Find, evaluate, and install new agent skills and plugins |
 | `maintain-note` | Merge, split, rename, and maintain notes |
 | `openreview` | Search and download papers from OpenReview |
 | `overleaf-skill` | Manage Overleaf projects with `olcli` |
@@ -147,6 +149,7 @@ Notes:
 | `quarkdown` | Author and compile Quarkdown documents |
 | `search-note` | Search and query the note vault |
 | `terms` | Record terminology conventions in `TERMS.md` |
+| `whathappens` | Query local macOS app-focus time tracking with `wh` |
 | `write-note` | Create and classify notes |
 | `wxmp-article-harvester` | Harvest public WeChat article archives |
 | `wxmp-to-blog` | Convert a WeChat article into an Astro blog post |
