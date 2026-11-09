@@ -24,6 +24,11 @@ Every skill is a directory under `skills/` containing a `SKILL.md` and,
 optionally, scripts or references. CC Switch scans the repository recursively,
 so no extra manifest is needed.
 
+The canonical working copy is `~/note/favour-config`, a submodule of the note
+repository. There is no separate development clone: commit and push from the
+submodule, then bump the parent pointer (see
+[Changing or removing a skill](#changing-or-removing-a-skill)).
+
 ## Adding a skill
 
 1. Create the directory and manifest:
@@ -65,24 +70,34 @@ so no extra manifest is needed.
    any script runs from an arbitrary working directory:
 
    ```bash
-   cd ~/code/favour-config
+   cd ~/note/favour-config
    git diff --check
    git grep -nE 'sk-[A-Za-z0-9]{20,}|/Users/[A-Za-z]|BEGIN (RSA|OPENSSH|PRIVATE)'
    ```
 
-6. Commit and push to `main`:
+6. Commit and push to `main`. This directory is the note repository's
+   submodule, so the push updates `Aliancn/favour-config`:
 
    ```bash
+   cd ~/note/favour-config
    git add skills/<name>
    git commit -m "skill: add <name>"
    git push
    ```
 
-7. Install it through CC Switch (see [Install with CC Switch](#install-with-cc-switch)).
+7. Record the new commit in the parent note repository:
+
+   ```bash
+   cd ~/note
+   git add favour-config
+   git commit -m "chore: bump favour-config"
+   ```
+
+8. Install it through CC Switch (see [Install with CC Switch](#install-with-cc-switch)).
    New skills show up in the repository's available list; they are not
    installed automatically.
 
-8. If the skill should be available inside the note repository without a
+9. If the skill should be available inside the note repository without a
    global install, add its name to the appropriate array in
    `~/note/scripts/link-project-skills.sh` and run that script.
 
@@ -113,23 +128,25 @@ Notes:
 
 - Do **not** edit `~/.cc-switch/skills/<name>/` for anything you want to keep:
   the next update replaces the whole directory.
-- For quick local iteration, edit the working tree and use the project-scoped
-  symlinks in a repository (they point at `favour-config/skills/` directly).
-  Publish once the behavior is settled.
+- The canonical working copy is the note repository's submodule,
+  `~/note/favour-config`. Project-scoped symlinks point at its `skills/`
+  directory, so edits take effect immediately in `~/note` sessions; publish
+  once the behavior is settled.
 - Do not commit `__pycache__/`, `.env`, or other generated files; the root
   `.gitignore` already covers the common cases.
-- The note repository pins a submodule commit. After pushing here, run
-  `note-sync`, or update it manually:
+- The note repository pins a submodule commit. Because development happens in
+  the submodule, after `git push` record the pointer in the parent repository:
 
   ```bash
   cd ~/note
-  git submodule update --remote favour-config
   git add favour-config
   git commit -m "chore: bump favour-config"
   ```
 
   The project-level symlinks follow the submodule's working tree, so they see
-  the new content as soon as the submodule is updated.
+  the new content as soon as it is checked out. On another machine, run
+  `git submodule update --remote favour-config` to move the pointer to the
+  latest `main`.
 
 ## Skills
 
@@ -238,7 +255,7 @@ never depend on private credentials.
 Publishing and updating are separate:
 
 ```bash
-cd ~/code/favour-config
+cd ~/note/favour-config
 # edit skills/<name>/...
 git add -A && git commit -m "update <name>" && git push
 ```
